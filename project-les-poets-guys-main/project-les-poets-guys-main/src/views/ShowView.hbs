@@ -1,0 +1,89 @@
+{{> Header}}
+
+<div id="showPoem">
+
+	{{#if modifyPoem}}
+	<a href="/poems/{{ poem.id }}/edit">
+		<div poem-id="{{ id }}" class="cardPoem">
+		<h3 id="title">{{title}}</h3>
+		<p id="description" style="white-space: pre-wrap;">{{poem.description}}</p>
+		</div>
+	</a>
+	{{else}}
+	<div poem-id="{{ id }}" class="cardPoem" style="white-space: pre-wrap;">
+		<h3 id="title">{{title}}</h3>
+		<p id="description">{{poem.description}}</p>
+	</div>
+	{{/if}}
+
+	<div class="card">
+		<p id="category"> <b>Category</b>: {{ category.name }}</p>
+	</div>
+
+	{{#if modifyPoem}}
+	<form id="delete-poem-form" method="POST" action="/poems/{{ poem.id }}">
+		<input type="hidden" name="method" value="DELETE">
+		<button type="submit">Delete</button>
+	</form>
+	{{/if}}
+	
+	{{#if showLike}}
+	<form method="POST" action="/poems/{{ poem.id }}/likes">
+		<button type="submit">Like</button>
+	</form>
+	{{/if}}
+
+	<h1>Comments</h1>
+	<form method="POST" action="/poems/{{ poem.id }}/comments">
+		<div class="commentContainer">
+				<h1>Comments</h1>
+				<div id="commentTitle">
+					<p for="title">Title</p>
+					<input id="title" name="title"></textarea>
+				</div>
+				<div id="commentDescription">
+					<p for="description">Description</p>
+					<textarea id="description" name="description"></textarea>
+				</div>
+				<div>
+					<button type="submit">Comment</button>
+				</div>
+    	</div>
+
+	</form>
+
+	<br>
+
+	{{#unless comments}}
+		<p>No Comments posted</p>
+	{{else}}
+		<ul id="comments" class="container2">
+			{{#each comments}}
+				{{#if canModify}}
+
+					<a href="/poems/comments/{{ id }}/edit">
+						<div comment-id="{{ id }}" class="cardComment">
+						<p style="white-space: pre-wrap;">{{ title }}</p>
+						<p>{{ description }}</p>
+					</div>
+					</a>
+
+					<div id="modify">
+						<form method="POST" action="/poems/{{ poem.id }}/comments/{{ id }}">
+							<input type="hidden" name="method" value="DELETE">
+							<button type="submit">Delete Comment</button>
+						</form>
+					</div>
+				{{else}}
+					<div comment-id="{{ id }}" class="cardComment">
+					<p style="white-space: pre-wrap;">{{ title }}</p>
+					<p>{{ description }}</p>
+					</div>
+				{{/if}}
+				
+
+			{{/each}}
+		</ul>
+	{{/unless}}
+</div>
+{{> Footer}}

@@ -1,0 +1,24 @@
+{{> Header }}
+
+<form id="edit-comment-form" action="{{path 'poems'}}/{{ comment.poemId }}/comments/{{ comment.id }}" method="POST">
+    <input type="hidden" name="method" value="PUT">
+
+    <div class="loginContainer">
+        <div class="loginContainer">
+            <h1>Edit Comment</h1>
+            <div class="register">
+                <p for="title">Title</p>
+                <input id="editTitle" type="text" name="title" placeholder="Enter new title" id="title" value="{{comment.title}}">
+            </div>
+            <div class="register">
+                <p for="description">Description</p>
+                <textarea id="editDescription" name="description" placeholder="Enter Description" id="description">{{comment.description}}</textarea>
+            </div>
+            <div>
+                <button type="submit" id="edit-comment-form-submit">Edit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{{> Footer }}

@@ -1,0 +1,43 @@
+erDiagram
+    USER |o--o{ POEM : made
+    POEM ||--o{ COMMENT: has
+    USER ||--o{ COMMENT: writes
+    POEM }|--|| CATEGORY: has
+    LIKE }o--|| POEM: has
+    USER ||--o{ LIKE: has
+
+    POEM {
+        int id PK
+        string title
+        string description
+        date created_at
+        date edited_at
+        int category_id FK
+        int user_id FK
+    }
+
+    USER {
+        int id PK
+        string email
+        string password
+        date created_at
+        date edited_at
+        bool is_admin
+    }
+
+    COMMENT {
+        int id PK
+        string content
+        date created_at
+        date edited_at
+        id user_id FK "comment author"
+        id poem_id FK
+    }
+    CATEGORY{
+        int id PK
+        string name
+    }
+    LIKE{
+        int user_id FK
+        int poem_id FK
+    }

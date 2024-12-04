@@ -1,0 +1,95 @@
+{{> Header }}
+
+<div class="change">
+	<div >
+		<img id="homeViewImages" src="../../../images/rotation/image1.png" style="width: 100%;">
+	</div>
+
+	<div class="container">
+		
+        <div class="card">
+            <a href="{{ path 'poems' }}">
+            <img src="../../../images/writing.webp" alt="Image 1">
+            <h3>DISCOVER A WORLD FULL OF SURPRISES</h3>
+            </a>
+        </div>
+    </div>
+	
+	<div class="container">
+		
+        <div class="card">
+            <a href="{{ path 'register' }}">
+            <img src="../../../images/community.webp" alt="Image 1">
+            <h3>JOIN A SUPPORTING COMMUNITY</h3>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{{ path 'poems/new' }}">
+            <img src="../../../images/firstpoem.webp" alt="Image 2">
+            <h3>CREATE YOUR FIRST POEM</h3>
+            </a>
+        </div>
+
+        <div class="card" >
+            <a href="{{ path 'poems' }}">
+            <img src="../../../images/comments.webp" alt="Image 3">
+            <h3>REVIEW YOUR FAVORITE POEMS</h3>
+            </a>
+        </div>
+
+    </div>
+
+	<h1 class="container">More About Us</h1>
+
+	<div class="container">
+		
+        <div class="card" >
+            <img id="abhay" src="../../../images/abhay/image1.webp" alt="Image 1">
+            <h3>Abhay Patel</h3>
+            <p>
+            Poetry is the answer
+        </p>
+        </div>
+
+        <div class="card" >
+            <img id="rambert" src="../../../images/rambert/image1.webp" alt="Image 2">
+            <h3>Tsafack Fadia Nahor Rambert</h3>
+            <p>Une vie sans poèsie, ce n'est pas une vie!</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+		let count = {value:0};
+        let abhayCount = {value:0};
+        let rambertCount = {value:0};
+		let arrayImageSource= ["../../../images/rotation/image1.png","../../../images/rotation/image2.png","../../../images/rotation/image3.png", "../../../images/rotation/image4.png"];
+        let abhay = ["../../../images/abhay/image1.webp","../../../images/abhay/image2.webp","../../../images/abhay/image3.webp"];
+        let rambert = ["../../../images/rambert/image1.webp","../../../images/rambert/image2.webp","../../../images/rambert/image3.webp"];
+		let image = document.getElementById("homeViewImages");
+        let abhayImage = document.getElementById("abhay");
+        let rambertImage = document.getElementById("rambert");
+		
+		function cycle() {
+                image.src = arrayImageSource[count];
+                abhayImage.src = abhay[abhayCount];
+                rambertImage.src = rambert[rambertCount]
+                count = (count === arrayImageSource.length - 1) ? 0 : count + 1;
+                abhayCount = (abhayCount === abhay.length - 1) ? 0 : abhayCount + 1;
+                rambertCount = (rambertCount === rambert.length - 1) ? 0 : rambertCount + 1;
+            }
+        function rotation(array, image, count) {
+            image.src = array[count.value]
+            count.value = (count.value === array.length - 1) ? 0 : count.value + 1;
+        }
+            
+        setInterval(() => rotation(arrayImageSource, image, count), 4000);
+        setInterval(() => rotation(abhay, abhayImage, abhayCount), 4000);
+        setInterval(() => rotation(rambert, rambertImage, rambertCount), 4888);
+        // setInterval(() => cycle(), 4000);
+	</script>
+
+{{> Footer }}

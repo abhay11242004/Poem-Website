@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="../../../images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="{{ styles 'style.css' }}">
+	<title>{{ title }}</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo">
+				<a href="{{ path '' }}">
+            	<img src="../../../images/sitelogo.png" alt="Logo">
+				</a>
+        	</div>
+
+			<div>
+			{{#if isLoggedIn}}
+			<ul class="nav-links">
+				<li><a href="{{ path '' }}">Home</a></li>
+				<li><a href="{{ path 'poems/new' }}">Create Poem</a></li>
+				<li><a href="{{ path 'poems' }}">Poems</a></li>
+				<li><a href="{{ path 'users'}}">Users</a></li>
+				<li><a href="/users/{{ userId }}">Profile</a></li>
+				<li><a href="{{ path 'logout'}}">Logout</a></li>
+			</ul>
+			{{else}}
+			<ul class="nav-links">
+				<li><a href="{{ path '' }}">Home</a></li>
+				<li><a href="{{ path 'poems' }}">Poems</a></li>
+				<li><a href="{{ path 'register'}}">Register</a></li>
+				<li><a href="{{ path 'login'}}">Login</a></li>
+			</ul>
+			{{/if}}
+			</div>
+		</nav>
+	</header>
+	<main>

@@ -1,0 +1,426 @@
+body {
+    padding-top: 53px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navigation bar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51,51,45, 0.8); /* Using RGBA for transparency */
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%; /* Ensure the navbar extends full width */
+    position: fixed; /* Keeps the navbar at the top of the viewport */
+    top: 0; /* Aligns the navbar at the top */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    backdrop-filter: blur(10px); /* Apply a blur effect */
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-icons button:hover {
+    opacity: 0.7;
+}
+
+/* Cards */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px;
+}
+
+.poems {
+    flex-direction: column;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    text-align: center;
+    cursor: pointer; 
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    height: 20px; /* Adjust based on the number of lines and line-height */
+}
+
+/* Poem Container */
+.cardPoem {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    text-align: center;
+    cursor: pointer; 
+    transition: transform 0.2s;
+}
+
+.cardPoem img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.cardPoem h3 {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.cardPoem:hover {
+    transform: scale(1.05);
+}
+
+
+.cardPoem p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    height: 100px; /* Adjust based on the number of lines and line-height */
+}
+
+body #showPoem {
+    padding-top: 80px;
+}
+#showPoem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#showPoem .cardPoem {
+    width: 75vh;
+    height: 75vh;
+}
+
+#showPoem .cardPoem p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    height: 100%;
+
+    text-wrap: balance;
+}
+
+#showPoem .cardPoem h3 {
+    padding: 0 15px;
+    font-size: 14px;
+    text-wrap: balance;
+}
+
+#showPoem .cardPoem:hover {
+    transform: scale(1.02);
+}
+
+#showPoem .card {
+    text-align: left;
+    padding: 0px;
+    width: 165px;
+    height: 45px;
+}
+
+/* Login */
+
+.loginContainer {
+    display: flex;
+    align-items:center;
+    align-content: center;
+    flex-direction:column;
+    padding: 20vh;
+    height: 100vh;
+    background-color: rgb(211, 210, 210);
+}
+
+.loginContainer .loginContainer {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 400px;
+    text-align: center;
+}
+
+.loginContainer .loginContainer div{
+    padding: 10px;
+}
+
+#emailContent p {
+    margin: 5px;
+    text-align: left;
+}
+
+#passwordContent p {
+    margin: 5px;
+    text-align: left;
+}
+
+#emailContent input {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 100px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+#rememberContent {
+    padding: 5px;
+}
+
+#buttonContent {
+    padding: 5px;
+}
+#buttonContent button{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 230px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+#rememberContent input {
+    justify-content: flex-start;
+}
+
+#passwordContent input {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 100px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+.loginContainer img {
+    height: 100px;
+    width: 100px;
+}
+
+/* Register */
+
+.register p{
+    margin: 5px;
+    text-align: left;
+}
+
+.register input{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 100px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+#registerButton button {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 215px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+/* Form Create Poem */
+
+#new-poem-form img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Create a new poem form*/
+
+#new-poem-form .loginContainer .loginContainer {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+#description{
+    border-width:2px;
+    padding-bottom: 300px;
+    padding-top: 0px;
+    padding-right: 449px;
+    border-radius: 0px;
+    text-wrap: wrap;
+    border-color: rgb(211, 210, 210);
+}
+
+#title{
+    padding-right: 440px;
+    border-radius: 0px;
+}
+
+/* Edit Form */
+
+#edit-poem-form .loginContainer .loginContainer {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+/* Remove Color from */
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Comments */
+
+.commentContainer {
+    display: flex;
+    align-items:center;
+    align-content: center;
+    flex-direction:column;
+    padding: 20vh;
+    height: 100vh;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 400px;
+    text-align: center;
+}
+
+#commentTitle input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 300px;
+    border-radius: 0px;
+}
+
+#commentDescription textarea{
+    padding-bottom: 150px;
+    padding-right: 300px;
+    border-radius: 0px;
+}
+
+.cardComment {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    cursor: pointer; 
+    transition: transform 0.2s;
+    white-space: pre-wrap;
+}
+
+#modify {
+    padding: 0px;
+}
+
+/* Sorting */
+
+#sort-filter-poems-form {
+    padding-left: 20px;
+}
+
+
+#sort-filter-poems-form #sortBy {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 215px;
+    border-radius: 0px;
+    border-color: rgb(211, 210, 210);
+}
+
+#sort-filter-poems-form button {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-color: rgb(211, 210, 210);
+}
+
+#editTitle {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 100px;
+}
+
+#editDescription {
+    padding-bottom: 100px;
+    padding-right: 110px;
+}

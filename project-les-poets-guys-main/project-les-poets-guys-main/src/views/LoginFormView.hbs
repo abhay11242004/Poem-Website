@@ -1,0 +1,30 @@
+{{> Header}}
+
+{{#if error}}
+<script >
+    alert("invalid credentials")
+</script>
+{{/if}}
+    <form id="login-form" method="POST" action="/login">
+        <div class="loginContainer">
+            <div class="loginContainer">
+                <img src="../../../images/favicon.ico">
+                <div id="emailContent">
+                    <p for="email">Email Adress </p>
+                    <input type="email" id="email" name="email" >
+                </div>
+                <div id="passwordContent">
+                    <p for="password">Password</p>
+                    <input type="password" id="password" name="password" >
+                </div>
+                <div id="rememberContent">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div id="buttonContent">
+                    <button id="login-form-submit-button" type="submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{{> Footer}}

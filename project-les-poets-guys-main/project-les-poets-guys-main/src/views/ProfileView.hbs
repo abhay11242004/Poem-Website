@@ -1,0 +1,38 @@
+{{> Header }}
+
+<h1>Your Profile</h1>
+<p> <b>Email</b>: {{user.email}}</p>
+<h2>Created Poems</h2>
+{{#unless createdPoems}}
+	<h2>No Poems created</h2>
+{{else}}
+	<ul class="container2">
+		{{#each createdPoems}}
+
+				<a href="/poems/{{ id }}">
+					<div poemCreated-id="{{ id }}" class="cardPoem">
+						
+						<h3>{{title}}</h3>
+						<p>{{description}}</p>
+					</div>
+				</a>
+		{{/each}}
+	</ul>
+{{/unless}}
+<h2>Liked Poems</h2>
+{{#unless likePoems}}
+	<p>No Poems liked</p>
+{{else}}
+	<ul class="container2">
+		{{#each likePoems}}
+				<a href="/poems/{{ id }}">
+					<div poemLiked-id="{{ id }}" class="cardPoem">
+						<h3>{{title}}</h3>
+						<p>{{description}}</p>
+					</div>
+				</a>
+		{{/each}}
+	</ul>
+{{/unless}}
+
+{{> Footer}}
